@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SURAKSHA-NET</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></head><body>
+<aside><h2>🛡 SURAKSHA-NET</h2><p>DISASTER INTELLIGENCE</p><nav><a href="#top">Dashboard</a><a href="#monitor">Monitoring</a><a href="#map-section">Geography</a><a href="#alerts">Alerts</a></nav></aside>
+<main id="top"><header><div><h1>Disaster Monitoring Dashboard</h1><p>Environmental monitoring and early warning prototype</p></div><span id="mode">DEMO MODE</span></header>
+<section class="welcome"><div><small>MONITORING CENTER</small><h2>Welcome to SURAKSHA-NET</h2><p>Monitor environmental conditions and identify potential hazard risks.</p></div><b id="clock"></b></section>
+<section id="risk" class="risk NORMAL"><small>CURRENT RISK STATUS</small><h2 id="riskValue">NORMAL</h2><p id="riskMessage">Waiting for readings</p></section>
+<section id="monitor"><h2>Environmental Monitoring</h2><div class="cards">
+<article>🌡 Temperature<strong id="temp">--</strong></article><article>💧 Humidity<strong id="humidity">--</strong></article>
+<article>🌊 Water distance<strong id="water">--</strong></article><article>🌧 Rainfall input<strong id="rain">--</strong></article></div></section>
+<section class="panel"><h2>Sensor History</h2><canvas id="chart"></canvas></section>
+<section id="map-section" class="panel"><h2>Geographical Monitoring · Illustrative stations</h2><div id="map"></div><p class="legend">🟢 Normal　🟡 Warning　🔴 Critical</p></section>
+<section id="alerts" class="panel"><h2>Alert Center</h2><div id="alertList">No alerts yet.</div></section>
+<section class="panel"><h2>Demonstration controls</h2><p>Test dashboard without hardware:</p>
+<button onclick="demo('NORMAL')">NORMAL</button><button onclick="demo('WARNING')">WARNING</button><button onclick="demo('CRITICAL')">CRITICAL</button>
+<p class="note">Demo values and thresholds are not official warning criteria.</p></section>
+<footer>Academic prototype · Not an operational emergency-warning service</footer></main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static',filename='map.js') }}"></script><script src="{{ url_for('static',filename='charts.js') }}"></script>
+<script src="{{ url_for('static',filename='alerts.js') }}"></script><script src="{{ url_for('static',filename='script.js') }}"></script></body></html>
